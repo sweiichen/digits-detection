@@ -12,7 +12,7 @@ import json
 dir_root = "./inference"
 device = torch.device("cuda:1" if torch.cuda.is_available() else "cpu")
 num_classes = 11
-file_name = 'results.json' 
+file_name = 'results.json'
 checkpoint = torch.load('model/faster_rcnn_1118.pth')
 
 model = get_detection_model(num_classes)
@@ -23,16 +23,17 @@ model.eval()
 threshold = 0.5
 
 for file in os.listdir(dir_root):
-    image = Image.open(os.path.join(dir_root,file))
+    image = Image.open(os.path.join(dir_root, file))
     img = torchvision.transforms.ToTensor()(image)
-    
+
     with torch.no_grad():
         prediction = model([img.to(device)])
     for pred in prediction:
         bboxes = []
         scores = []
         labels = []
-        for bbox, label, score in zip(pred["boxes"], pred["labels"], pred["scores"]):
+        for bbox, label, score in zip(pred["boxes"], pred["labels"],
+                                      pred["scores"]):
             if score > threshold:
                 bbox = list(bbox.cpu().numpy().astype(int))
                 #bbox (y0, x0, y1, x1)
@@ -40,13 +41,8 @@ for file in os.listdir(dir_root):
                 bboxes.append(bbox)
                 scores.append(float(score.cpu().numpy()))
                 labels.append(int(label.cpu().numpy()))
-        p = dict(
-            filename=file,
-            bbox=bboxes,
-            score=scores,
-            label=labels
-        )
+        p = dict(filename=file, bbox=bboxes, score=scores, label=labels)
     results.append(p)
 
-with open(file_name,'w') as f:
-    json.dump(results,f)
+with open(file_name, 'w') as f:
+    json.dump(results, f)
