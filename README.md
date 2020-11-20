@@ -15,7 +15,7 @@ The following specs were used to create the original solution.
 ## Reproducing Submission
 To reproduct my submission without retrainig, do the following steps:
 1. [Installation](#installation)
-2. [Data Preparation](#data-preparation)
+2. [Dataset Preparation](#dataset-preparation)
 3. [Train](#train)
 4. [Inference](#inference)
 
