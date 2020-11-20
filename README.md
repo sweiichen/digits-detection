@@ -56,7 +56,7 @@ The expected training times are:
  GPUs  | Epoch | Training Time
 ------------ | ------------- | ------------- 
  1x TitanX  | 1 | 1 hours 10 mins
- 
+
 When starting running the code, you can see the ouput like this.
 ```
 Epoch: [0]  [   0/7516]  eta: 1:39:30  lr: 0.000010  loss: 2.0864 (2.0864)  loss_classifier: 1.8552 (1.8552)  loss_box_reg: 0.1045 (0.1045)  loss_objectness: 0.1105 (0.1105)  loss_rpn_box_reg: 0.0162 (0.0162)  time: 0.7944  data: 0.1111  max mem: 0
@@ -92,6 +92,7 @@ IoU metric: bbox
  Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.596
 ```
 After 1 epochs I obtain a COCO-style mAP of 43.9.
+
 After training for 10 epochs, I got the following metrics and the mAP is 48.3.
 ```
 IoU metric: bbox
@@ -116,14 +117,13 @@ I have save the trained model parameters in the [google drive](https://drive.goo
 
 
 ## Inference
-The inference time per image is about 122 ms.
+The inference time per image is about 122 ms when using GPU from google Colab.
 ### Inference and get the bbox information
-You should put the test images in the [./inference](https://github.com/sweiichen/digits-detection/tree/main/inference) folder and run [inference.py](https://github.com/sweiichen/digits-detection/blob/main/inference.py) and you will get the results information in results.json.
+You should put the test images in the [./inference](https://github.com/sweiichen/digits-detection/tree/main/inference) folder and run [inference.py](https://github.com/sweiichen/digits-detection/blob/main/inference.py) and you will get the results information in the results.json.
 ```
 python inference.py
 ```
 The json format is a list of dictionaries.
-
 Each dictionary contains four keys
 - "filename": the file name of a image 
 - "bbox": list of bounding boxes in (y1, x1, y2, x2)
