@@ -33,7 +33,7 @@ pip install -r requirements.txt
 Download the whole training dataset from [svhd](http://ufldl.stanford.edu/housenumbers/).
 ### Annotation processing 
 After downloding it, we have to deal with the digitalStruct.mat file which containing the annotations of the training datas.
-Just run generate_csv_data.py and get the train_ann.csv file to fit the [custom dataset] which I write.
+Just run generate_csv_data.py and get the train_ann.csv file to fit the [custom dataset](https://github.com/sweiichen/digits-detection/blob/main/svhd_dataset.py) which I write.
 If you don't want to run this file, can just use [train_ann.csv](https://github.com/sweiichen/digits-detection/blob/main/train/train_ann.csv) saved in [./train](https://github.com/sweiichen/digits-detection/tree/main/train) folder.
 
 ```
