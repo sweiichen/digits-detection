@@ -56,6 +56,7 @@ The expected training times are:
  GPUs  | Epoch | Training Time
 ------------ | ------------- | ------------- 
  1x TitanX  | 1 | 1 hours 10 mins
+ 
 When starting running the code, you can see the ouput like this.
 ```
 Epoch: [0]  [   0/7516]  eta: 1:39:30  lr: 0.000010  loss: 2.0864 (2.0864)  loss_classifier: 1.8552 (1.8552)  loss_box_reg: 0.1045 (0.1045)  loss_objectness: 0.1105 (0.1105)  loss_rpn_box_reg: 0.0162 (0.0162)  time: 0.7944  data: 0.1111  max mem: 0
