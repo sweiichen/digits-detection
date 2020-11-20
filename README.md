@@ -3,7 +3,7 @@ HW2 for NCTU CS Selected Topics in Visual Recognition using Deep Learning
 The task is to detect every single digits in a image, and use SVHN dataset whcich contains 33402 training images, 13068 test images to do the experiment.
 
 I reference from the [pytorch offical tutorial](https://pytorch.org/tutorials/intermediate/torchvision_tutorial.html) and use the pretrained faster R-CNN model to implement this task.
-The used python code, utils.py, transforms.py, coco_eval.py, engine.py and coco_utils.py, are from https://github.com/pytorch/vision.git.
+The used python code, [utils.py](https://github.com/sweiichen/digits-detection/blob/main/utils.py), [transforms.py](https://github.com/sweiichen/digits-detection/blob/main/transforms.py), [coco_eval.py](https://github.com/sweiichen/digits-detection/blob/main/coco_eval.py), [engine.py](https://github.com/sweiichen/digits-detection/blob/main/engine.py) and [coco_utils.py](https://github.com/sweiichen/digits-detection/blob/main/coco_utils.py), are from https://github.com/pytorch/vision.git.
 
 
 
@@ -20,7 +20,7 @@ To reproduct my submission without retrainig, do the following steps:
 4. [Inference](#inference)
 
 ## Installation
-All requirements should be detailed in requirements.txt. 
+All requirements should be detailed in [requirements.txt](https://github.com/sweiichen/digits-detection/blob/main/requirements.txt). 
 You have to create your own python virtual environment.
 - python version: 3.7.7 
 - cuda version: 10.1.243
@@ -34,7 +34,7 @@ Download the whole training dataset from [svhd](http://ufldl.stanford.edu/housen
 ### Annotation processing 
 After downloding it, we have to deal with the digitalStruct.mat file which containing the annotations of the training datas.
 Just run generate_csv_data.py and get the train_ann.csv file to fit the [custom dataset] which I write.
-If you don't want to run this file, can just use [train_ann.csv] saved in ./train folder.
+If you don't want to run this file, can just use [train_ann.csv](https://github.com/sweiichen/digits-detection/blob/main/train/train_ann.csv) saved in [./train](https://github.com/sweiichen/digits-detection/tree/main/train) folder.
 
 ```
 python generate_csv_data.py
@@ -44,7 +44,7 @@ python generate_csv_data.py
 
 
 ## Training
-Save all the training images and train_ann.csv in the ./train folder and run the python code to start the training process. 
+Save all the training images and train_ann.csv in the [./train](https://github.com/sweiichen/digits-detection/tree/main/train) folder and run [train.py](https://github.com/sweiichen/digits-detection/blob/main/train.py) to start the training process. 
 
 ```
 python train.py
@@ -111,13 +111,13 @@ IoU metric: bbox
 
 
 ### Load trained parameters
-I have save the trained model parameters in ./model/faste_rcnn_1118, you could directly use it to do inference without retraining.
+I have save the trained model parameters in the [google drive](https://drive.google.com/file/d/1YlV7PhROIFigH4E-lgHxWlUN6bkRWeOA/view?usp=sharing), you could directly download it and save in ./model folder to do inference without retraining.
 
 
 ## Inference
 The inference time per image is about 122 ms.
 ### Inference and get the bbox information
-You should put the test images in the ./inference folder and run inference.py and you will get the results information in results.json.
+You should put the test images in the [./inference](https://github.com/sweiichen/digits-detection/tree/main/inference) folder and run [inference.py](https://github.com/sweiichen/digits-detection/blob/main/inference.py) and you will get the results information in results.json.
 ```
 python inference.py
 ```
@@ -139,7 +139,7 @@ which looks like:
 ```
 
 ### Draw bounding box
-After getting the results.json, you can run draw_bbox.py and use the json file to get the images with predicted bounding boxes in the ./results folder
+After getting the results.json, you can run [draw_bbox.py](https://github.com/sweiichen/digits-detection/blob/main/draw_bbox.py) and use the json file to get the images with predicted bounding boxes in the [./results](https://github.com/sweiichen/digits-detection/tree/main/results) folder
 ```
 python draw_bbox.py
 ```
