@@ -54,7 +54,7 @@ You might chage the bath size, according to you GPU memory size.
 The expected training times are:
 
  GPUs  | Epoch | Training Time
------------- | ------------- | ------------- | ------------- | -------------
+------------ | ------------- | ------------- 
  1x TitanX  | 1 | 1 hours 10 mins
 When starting running the code, you can see the ouput like this.
 ```
